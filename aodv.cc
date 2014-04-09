@@ -95,9 +95,9 @@ int main (int argc, char **argv)
 
 //-----------------------------------------------------------------------------
 AodvExample::AodvExample () :
-  size (10),
+  size (12),
   step (100),
-  totalTime (10),
+  totalTime (1000),
   pcap (true),
   printRoutes (true)
 {
