@@ -95,8 +95,8 @@ int main (int argc, char **argv)
 
 //-----------------------------------------------------------------------------
 AodvExample::AodvExample () :
-  size (12),
-  step (100),
+  size (16),//should be a square number
+  step (10),
   totalTime (1000),
   pcap (true),
   printRoutes (true)
@@ -161,8 +161,8 @@ AodvExample::CreateNodes ()
                                  "MinX", DoubleValue (0.0),
                                  "MinY", DoubleValue (0.0),
                                  "DeltaX", DoubleValue (step),
-                                 "DeltaY", DoubleValue (0),
-                                 "GridWidth", UintegerValue (size),
+                                 "DeltaY", DoubleValue (step),
+                                 "GridWidth", UintegerValue (sqrt(size)),
                                  "LayoutType", StringValue ("RowFirst"));
   mobility.SetMobilityModel ("ns3::ConstantPositionMobilityModel");
   mobility.Install (nodes);
